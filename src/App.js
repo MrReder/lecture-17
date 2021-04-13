@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import Student from './components/student';
 import './App.css';
+
+const studentsList = [
+  {
+    id: 211,
+    name: "Martyn",
+    tasks: 12
+  },
+  {
+    id: 212,
+    name: "Tanya",
+    tasks: 13
+  }
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {studentsList.map(student => <Student {...student} key={student.id} />)}
     </div>
   );
 }
